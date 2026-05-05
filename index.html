@@ -111,6 +111,90 @@
         }
 
         /* ════════════════════════════════════════
+           СЛАЙД 0 — ТИТУЛЬНЫЙ
+        ════════════════════════════════════════ */
+        .slide-0 {
+            background: linear-gradient(160deg, #ffffff 0%, #f5f0ff 60%, #ede8ff 100%);
+            justify-content: flex-end;
+            padding-bottom: 90px;
+        }
+
+        .s0-topbar {
+            position: absolute;
+            top: 36px; left: 72px; right: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .s0-logo {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--purple);
+            text-transform: uppercase;
+        }
+
+        .s0-tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: #aaa;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .s0-title {
+            font-size: 92px;
+            font-weight: 900;
+            line-height: 1.0;
+            color: #111;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .s0-title span { color: var(--purple); }
+
+        .s0-sub {
+            font-size: 18px;
+            color: var(--purple);
+            font-weight: 400;
+            margin-bottom: 44px;
+            line-height: 1.5;
+        }
+
+        .s0-founder {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .s0-founder-bar {
+            width: 3px;
+            background: var(--purple);
+            border-radius: 2px;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .s0-founder-inner {}
+
+        .s0-founder-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #aaa;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .s0-founder-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        /* ════════════════════════════════════════
            СЛАЙД 1 — ПРОБЛЕМА
         ════════════════════════════════════════ */
         .slide-1 { background: white; }
@@ -474,8 +558,25 @@
 
 <div id="presentation">
 
+    <!-- ══════════════ СЛАЙД 0: ТИТУЛЬНЫЙ ══════════════ -->
+    <div class="slide slide-0 active">
+        <div class="s0-topbar">
+            <div class="s0-logo">OpenSchool AI</div>
+        </div>
+        <div class="s0-tag">EdTech &nbsp;·&nbsp; AI &nbsp;·&nbsp; Kazakhstan</div>
+        <div class="s0-title">Open<span>School</span> AI</div>
+        <div class="s0-sub">OpenSchool AI — ИИ-помощник, который сокращает до 40% рутинной нагрузки учителя</div>
+        <div class="s0-founder">
+            <div class="s0-founder-bar"></div>
+            <div class="s0-founder-inner">
+                <div class="s0-founder-label">Основатель</div>
+                <div class="s0-founder-name">Қалдыбаев Исламбек Данабекұлы</div>
+            </div>
+        </div>
+    </div>
+
     <!-- ══════════════ СЛАЙД 1: ПРОБЛЕМА ══════════════ -->
-    <div class="slide slide-1 active">
+    <div class="slide slide-1">
         <h1 class="title">Сколько часов учителя тратят на рутину?</h1>
         <p class="subtitle">Современные учителя 70% рабочего времени тратят на задачи без учеников.<br>
             Это отнимает время от качественного преподавания и забирает энергию.</p>
