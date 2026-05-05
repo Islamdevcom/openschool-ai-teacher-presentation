@@ -179,33 +179,137 @@
 
         /* ===== СЛАЙД 4: ИНТЕРФЕЙС ===== */
         .slide-4 {
-            background: white;
+            background: linear-gradient(160deg, #f5f0ff 0%, #eef2ff 50%, #f8f9fa 100%);
+            padding: 50px 40px;
         }
 
-        .ui-screenshot {
-            margin-top: 40px;
-            border-radius: 12px;
+        .slide-4 .title {
+            font-size: 42px;
+        }
+
+        .platform-wrapper {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .browser-frame {
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            border: 1px solid #e0e0e0;
-            background: white;
+            box-shadow: 0 20px 60px rgba(139,95,191,0.20), 0 4px 20px rgba(0,0,0,0.10);
+            border: 1px solid #ddd;
         }
 
-        .ui-screenshot img {
-            width: 100%;
-            height: auto;
+        .browser-bar {
+            background: #f0f0f0;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .browser-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
             display: block;
         }
 
-        .ui-note {
-            margin-top: 25px;
-            padding: 20px;
-            background: linear-gradient(135deg, #e8d7f1 0%, #f0e6ff 100%);
-            border-radius: 8px;
-            font-size: 14px;
+        .browser-dots span:nth-child(1) { background: #ff5f57; }
+        .browser-dots span:nth-child(2) { background: #ffbd2e; }
+        .browser-dots span:nth-child(3) { background: #28c840; }
+
+        .browser-url {
+            flex: 1;
+            background: white;
+            border-radius: 6px;
+            padding: 5px 12px;
+            font-size: 12px;
+            color: #666;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .browser-url::before {
+            content: "🔒";
+            font-size: 11px;
+        }
+
+        .browser-screenshot {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .platform-features {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .platform-feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px 18px;
+            box-shadow: 0 4px 16px rgba(139,95,191,0.10);
+            border-left: 4px solid var(--purple);
+            transition: transform 0.2s;
+        }
+
+        .platform-feature-card:hover {
+            transform: translateX(4px);
+        }
+
+        .pfc-icon {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .pfc-title {
+            font-size: 13px;
+            font-weight: 700;
             color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .pfc-desc {
+            font-size: 12px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        .pfc-badge {
+            display: inline-block;
+            margin-top: 6px;
+            background: linear-gradient(135deg, #8B5FBF, #9966cc);
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 20px;
+        }
+
+        .ui-note {
+            margin-top: 18px;
+            padding: 16px 22px;
+            background: linear-gradient(135deg, var(--purple) 0%, #9966cc 100%);
+            border-radius: 10px;
+            font-size: 14px;
+            color: white;
             text-align: center;
-            font-weight: 500;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 20px rgba(139,95,191,0.3);
         }
 
         /* ===== СЛАЙД 5: ФУНКЦИИ ===== */
@@ -492,7 +596,8 @@
             .results-grid,
             .examples-grid,
             .start-steps,
-            .contact-methods {
+            .contact-methods,
+            .platform-wrapper {
                 grid-template-columns: 1fr;
             }
         }
@@ -594,15 +699,60 @@
 
     <!-- СЛАЙД 4: ИНТЕРФЕЙС -->
     <div class="slide slide-4">
-        <div class="max-w">
-            <h1 class="title">Вот как это выглядит</h1>
-            <p class="subtitle">Простой интерфейс, разобраться за 5 минут</p>
+        <div class="max-w" style="max-width: 1100px;">
+            <h1 class="title">Платформа OpenSchool AI</h1>
+            <p class="subtitle" style="margin-bottom: 0;">Интуитивный интерфейс — учитель разбирается за 5 минут</p>
 
-            <div class="ui-screenshot">
-                <img src="https://islamdevcom.github.io/openschool_ai_pitch/images/platform.png" alt="OpenSchool AI платформа" style="width: 100%; height: auto;">
-            </div>
-            <div class="ui-note">
-                ✨ Всё что нужно на одном экране: планирование, создание материалов, проверка и аналитика
+            <div class="platform-wrapper">
+                <!-- Левая: скриншот в браузере -->
+                <div>
+                    <div class="browser-frame">
+                        <div class="browser-bar">
+                            <div class="browser-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="browser-url">app.openschool.ai — Панель учителя</div>
+                        </div>
+                        <img class="browser-screenshot" src="general%20dashboard.png" alt="OpenSchool AI — Дашборд учителя">
+                    </div>
+                    <div class="ui-note">
+                        ✅ &nbsp;Единый центр управления: уроки, задания, успеваемость и аналитика — в одном окне
+                    </div>
+                </div>
+
+                <!-- Правая: карточки ключевых возможностей -->
+                <div class="platform-features">
+                    <div class="platform-feature-card">
+                        <div class="pfc-icon">🤖</div>
+                        <div class="pfc-title">ИИ-генерация заданий</div>
+                        <div class="pfc-desc">Задайте тему и класс — задания готовы за 10 секунд</div>
+                        <span class="pfc-badge">Экономия 2 ч/день</span>
+                    </div>
+                    <div class="platform-feature-card">
+                        <div class="pfc-icon">✅</div>
+                        <div class="pfc-title">Автопроверка работ</div>
+                        <div class="pfc-desc">Фото тетради → система проверяет и ставит оценку</div>
+                        <span class="pfc-badge">0 мин вместо 2 ч</span>
+                    </div>
+                    <div class="platform-feature-card">
+                        <div class="pfc-icon">📊</div>
+                        <div class="pfc-title">Аналитика класса</div>
+                        <div class="pfc-desc">Прогресс каждого ученика, слабые темы, рекомендации</div>
+                        <span class="pfc-badge">В реальном времени</span>
+                    </div>
+                    <div class="platform-feature-card">
+                        <div class="pfc-icon">🎯</div>
+                        <div class="pfc-title">Живые опросы</div>
+                        <div class="pfc-desc">Запустите викторину прямо на уроке — 1 клик</div>
+                        <span class="pfc-badge">Видно сразу кто понял</span>
+                    </div>
+                    <div class="platform-feature-card">
+                        <div class="pfc-icon">📱</div>
+                        <div class="pfc-title">Доступно везде</div>
+                        <div class="pfc-desc">ПК, планшет, смартфон — работает на любом устройстве</div>
+                        <span class="pfc-badge">24/7 для учеников</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
